@@ -16,8 +16,8 @@ body {
 }
 
 .container {
-  width: 350px;
-  height: 500px;
+  width: 35%;
+  height: 40%;
   perspective: 800px;
 }
 
