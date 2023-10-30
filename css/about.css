@@ -2,7 +2,6 @@ body {
   background-color: #f6f4eb;
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 80px;
 }
 
 h1 {
@@ -10,7 +9,7 @@ h1 {
 }
 
 .container {
-  margin: 20px auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
