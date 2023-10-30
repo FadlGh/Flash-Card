@@ -14,3 +14,25 @@ function AddContainer() {
         </div>
       </div>`;
 }
+
+function addFlashcard() {
+  const question = prompt("Enter the question:");
+  const answer = prompt("Enter the answer:");
+  const hint = prompt("Enter the hint:");
+
+  // Check if the user canceled the input
+  if (question === null || answer === null || hint === null) {
+    return;
+  }
+
+  const newFlashcard = {
+    question: question,
+    answer: answer,
+    hint: hint,
+  };
+
+  flashcardsData.push(newFlashcard);
+
+  // Call the display function to show the updated flashcards
+  displayFlashcards();
+}
