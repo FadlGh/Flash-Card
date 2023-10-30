@@ -12,7 +12,37 @@ function AddContainer() {
           <label>Answer:</label>
           <input type="text" class="answer" placeholder="Enter answer" />
         </div>
+
+                <div class="hint-holder">
+          <label>Hint:</label>
+          <input type="text" class="hint" placeholder="Enter hint" />
+        </div>
       </div>`;
+}
+
+let flashcardsData = [
+  {
+    question: "What is the capital of France?",
+    answer: "Paris",
+    hint: "The Eiffel Tower is located here.",
+  },
+  {
+    question: "What is the largest planet in our solar system?",
+    answer: "Jupiter",
+    hint: "It's known for its massive size and great red spot.",
+  },
+];
+
+function displayFlashcards() {
+  const flashcardsContainer = document.getElementById("test-form");
+
+  flashcardsData.forEach((flashcard) => {
+    flashcardsContainer.innerHTML += `
+                    <div class="question">Question: ${flashcard.question}</div>
+                    <div class="answer">Answer: ${flashcard.answer}</div>
+                    <div class="hint">Hint: ${flashcard.hint}</div>
+                `;
+  });
 }
 
 function addFlashcard() {
@@ -32,7 +62,4 @@ function addFlashcard() {
   };
 
   flashcardsData.push(newFlashcard);
-
-  // Call the display function to show the updated flashcards
-  displayFlashcards();
 }

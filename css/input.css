@@ -28,7 +28,8 @@ h1 {
 }
 
 .answer-holder,
-.question-holder {
+.question-holder,
+.hint-holder {
   display: flex;
   justify-content: space-between;
   align-items: center;
