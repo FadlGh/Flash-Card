@@ -10,12 +10,14 @@
     <div class="container" id="flashcard-container">
       <div class="card" id="flashcard">
         <div class="front">
-          <h2>Question</h2>
+          <h2 id="question">Question</h2>
+          <h5 id="hint">Hint</h5>
           <input type="text" placeholder="Enter Answer" maxlength="150" />
           <button onclick="flipCard()">Flip</button>
         </div>
         <div class="back">
-          <h2>Answer</h2>
+          <h2 id="answer">Answer</h2>
+          <button onclick="updateCard()">Next</button>
         </div>
       </div>
     </div>

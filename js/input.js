@@ -1,7 +1,7 @@
 var test_form = document.getElementById("test-form");
 const questions = document.getElementsByClassName("question");
-const answer = document.getElementsByClassName("answer");
-const hint = document.getElementsByClassName("hint");
+const answers = document.getElementsByClassName("answer");
+const hints = document.getElementsByClassName("hint");
 
 function AddContainer() {
   test_form.innerHTML += `
@@ -26,8 +26,8 @@ function AddContainer() {
 function Submit() {
   for (let i = 0; i < questions.length; i++) {
     const questionText = questions[i].value;
-    const answerText = answer[i].value;
-    const hintText = hint[i].value;
+    const answerText = answers[i].value;
+    const hintText = hints[i].value;
 
     localStorage.setItem(
       "Flashcard" + i,
