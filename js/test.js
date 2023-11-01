@@ -1,3 +1,7 @@
+let i = 0;
+
+updateCard();
+
 function flipCard() {
   const card = document.getElementById("flashcard");
 
@@ -6,10 +10,26 @@ function flipCard() {
   } else {
     card.style.transform = "rotateY(180deg)";
   }
-}
 
-let i = 0;
-updateCard();
+  const answerElement = document.getElementById("answer-input");
+  if (answerElement) {
+    const answer = answerElement.value;
+    i--;
+    const cardData = JSON.parse(localStorage.getItem("Flashcard" + i));
+    const correctAnswer = cardData.answer;
+    i++;
+
+    if (correctAnswer === answer) {
+      console.log("yaya");
+      console.log(answer);
+      console.log(correctAnswer);
+    } else {
+      console.log("nope");
+      console.log(answer);
+      console.log(correctAnswer);
+    }
+  }
+}
 
 function updateCard() {
   if (localStorage.length < i + 1) {
@@ -17,29 +37,19 @@ function updateCard() {
   }
 
   const card = document.getElementById("flashcard");
+
   if (card.style.transform === "rotateY(180deg)") {
     card.style.transform = "rotateY(0deg)";
   }
+
   const question = document.getElementById("question");
   const answer = document.getElementById("answer");
   const hint = document.getElementById("hint");
 
-  question.innerHTML = JSON.parse(
-    localStorage.getItem("Flashcard" + i)
-  ).question;
+  const cardData = JSON.parse(localStorage.getItem("Flashcard" + i));
+  question.textContent = cardData.question;
+  answer.textContent = cardData.answer;
+  hint.textContent = cardData.hint;
 
-  answer.innerHTML = JSON.parse(localStorage.getItem("Flashcard" + i)).answer;
-
-  hint.innerHTML = JSON.parse(localStorage.getItem("Flashcard" + i)).hint;
-
-  console.log(JSON.parse(localStorage.getItem("Flashcard" + i)).question);
-  console.log(JSON.parse(localStorage.getItem("Flashcard" + i)).answer);
-  console.log(
-    "hint: " + JSON.parse(localStorage.getItem("Flashcard" + i)).hint
-  );
   i++;
-}
-
-function clear() {
-  localStorage.clear();
 }

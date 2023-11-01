@@ -1,10 +1,10 @@
-var test_form = document.getElementById("test-form");
+var testForm = document.getElementById("test-form");
 const questions = document.getElementsByClassName("question");
 const answers = document.getElementsByClassName("answer");
 const hints = document.getElementsByClassName("hint");
 
 function AddContainer() {
-  test_form.innerHTML += `
+  testForm.innerHTML += `
     <div class="container">
         <div class="question-holder">
           <label>Question:</label>
