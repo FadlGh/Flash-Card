@@ -38,10 +38,15 @@ function flipCard() {
 }
 
 function updateCard() {
-  if (localStorage.length < i + 1) {
+  if (localStorage.length - 2 < i + 1) {
+    localStorage.setItem("wrong", wrong);
+    localStorage.setItem("correct", correct);
+    window.location.href = "score.html";
     return;
   }
-
+  console.log(localStorage.length - 2);
+  console.log(i + 1);
+  console.log(wrong);
   const card = document.getElementById("flashcard");
 
   if (card.style.transform === "rotateY(180deg)") {
