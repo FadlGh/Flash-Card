@@ -16,7 +16,7 @@ function AddContainer() {
           <input type="text" class="answer" placeholder="Enter answer" maxlength="150"/>
         </div>
 
-                <div class="hint-holder">
+        <div class="hint-holder">
           <label>Hint:</label>
           <input type="text" class="hint" placeholder="Enter hint" maxlength="150"/>
         </div>

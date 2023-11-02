@@ -22,6 +22,12 @@ body {
   height: 18em;
   perspective: 800px;
 }
+@media (max-width: 525px) {
+  .container {
+    width: 16em;
+    margin-left: 45px; /* Adjust the height for smaller screens as needed */
+  }
+}
 
 .card {
   height: 100%;

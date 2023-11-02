@@ -1,5 +1,11 @@
 let i = 0;
 
+let wrong = 0;
+let correct = 0;
+
+let wrong_element = document.getElementById("wrong-element");
+let correct_element = document.getElementById("correct-element");
+
 updateCard();
 
 function flipCard() {
@@ -20,22 +26,27 @@ function flipCard() {
     i++;
 
     if (correctAnswer === answer) {
-      console.log("yaya");
-      console.log(answer);
-      console.log(correctAnswer);
+      correct++;
     } else {
-      console.log("nope");
-      console.log(answer);
-      console.log(correctAnswer);
+      wrong++;
     }
+
+    wrong_element.innerHTML = "Wrong: " + wrong;
+    correct_element.innerHTML = "Correct: " + correct;
+    answerElement.value = "";
   }
 }
 
 function updateCard() {
-  if (localStorage.length < i + 1) {
+  if (localStorage.length - 2 < i + 1) {
+    localStorage.setItem("wrong", wrong);
+    localStorage.setItem("correct", correct);
+    window.location.href = "score.html";
     return;
   }
-
+  console.log(localStorage.length - 2);
+  console.log(i + 1);
+  console.log(wrong);
   const card = document.getElementById("flashcard");
 
   if (card.style.transform === "rotateY(180deg)") {
