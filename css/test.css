@@ -10,10 +10,11 @@ body {
   background: #f6f4eb;
   font-family: Helvetica, sans-serif;
   color: rgb(211, 211, 211);
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 0em;
 }
 
 .container {
@@ -67,4 +68,16 @@ input[type="text"] {
   margin: 10px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+p {
+  color: #3a3a3a;
+  font-style: bold;
+  font-size: 2em;
+  margin: 20px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
 }
